@@ -26,6 +26,15 @@
   box-sizing: border-box;
 }
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+html.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
 body {
   margin: 0;
   min-width: 320px;

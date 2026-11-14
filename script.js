@@ -39,10 +39,11 @@
 
   if (typeof Lenis !== "undefined" && hasGsap && !reduceMotion.matches) {
     const lenis = new Lenis({
-      duration: 1.05,
+      duration: 0.7,
       smoothWheel: true,
-      wheelMultiplier: 0.9,
+      wheelMultiplier: 1.1,
       touchMultiplier: 1,
+      anchors: true,
     });
 
     lenis.on("scroll", ScrollTrigger.update);
@@ -64,9 +65,9 @@
           id: "project-showcase",
           trigger: projectStage,
           start: "top top+=90",
-          end: () => `+=${window.innerHeight * (projectCards.length - 1)}`,
+          end: () => `+=${window.innerHeight * (projectCards.length - 1) * 0.7}`,
           pin: true,
-          scrub: 1,
+          scrub: true,
           invalidateOnRefresh: true,
           onUpdate: (self) => {
             if (progressBar) gsap.set(progressBar, { scaleX: Math.max(0.25, self.progress) });
